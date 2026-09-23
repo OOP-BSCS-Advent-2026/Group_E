@@ -1,8 +1,8 @@
 public class GroupE_BusinessSimulator {
 
     public static void main(String[] args) {
-        // Build the four real BuildRight Hardware items as one Item[] array.
-        // Item[] can hold any subclass because every subclass IS-A Item.
+       // Placed the four BuildRight Hardware items into one Item[] array
+      // This is possible because every subclass "IS-A" Item.
         Item[] items = {
             new PercentDiscountItem("Cement (bag)",    35000.0, 5, 5),   // qty >= 5 -> 5% off
             new NoDiscountItem     ("Nails (kg)",       4000.0),          // never discounted
@@ -10,7 +10,7 @@ public class GroupE_BusinessSimulator {
             new PercentDiscountItem("Timber (piece)",  25000.0, 4, 10)    // qty >= 4 -> 10% off
         };
 
-        // Phase 1 test quantities - kept so we can verify the same total.
+        // Using the same quatities to verify the total in phase 1.
         int[] quantities = {4, 2, 2, 4};
 
         displayPriceList(items);
@@ -20,7 +20,7 @@ public class GroupE_BusinessSimulator {
         System.out.printf("TOTAL        = UGX %.2f%n", grandTotal);
     }
 
-    // Display formatted business price list (uses getName() / getPrice())
+    // Method to display business price list using getName() and getPrice()
     public static void displayPriceList(Item[] items) {
         System.out.println("==== BUILDRIGHT HARDWARE ====");
         for (int i = 0; i < items.length; i++) {
@@ -30,9 +30,7 @@ public class GroupE_BusinessSimulator {
         System.out.println();
     }
 
-    // Print receipt lines, then return grand total.
-    // Notice: no if/else on item type here at all - each object runs its OWN
-    // calculateTotal() (polymorphism), which is the whole point of Phase 2.
+    // Method to print receipt lines and then return grand total.
     public static double processAndPrintReceipt(Item[] items, int[] quantities) {
         double total = 0.0;
         System.out.println("==== RECEIPT ====");
