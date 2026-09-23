@@ -10,7 +10,7 @@ public class GroupE_BusinessSimulator {
             new PercentDiscountItem("Timber (piece)",  25000.0, 4, 10)    // qty >= 4 -> 10% off
         };
 
-        // Using the same quatities to verify the total in phase 1.
+        // Using the same quantities to verify the total in phase 1.
         int[] quantities = {4, 2, 2, 4};
 
         displayPriceList(items);
